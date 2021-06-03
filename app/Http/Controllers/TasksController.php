@@ -96,6 +96,7 @@ use App\Task;
 
         // メッセージ編集ビューでそれを表示
         return view('tasks.edit', [
+            
             'task' => $task,
         ]);
         }
@@ -113,6 +114,7 @@ use App\Task;
             
              // バリデーション
         $request->validate([
+            'status' => 'required|max:10',
             'content' => 'required|max:255',
         ]);
              // idの値でメッセージを検索して取得
