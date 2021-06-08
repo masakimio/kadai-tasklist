@@ -11,10 +11,12 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
              　 @if (Auth::check())
-             　 <ul class="dropdown-menu dropdown-menu-right">
+             　 <!--<ul class="dropdown-menu dropdown-menu-right">-->
+             　     {{-- メッセージ作成ページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('tasks.create', '新規タスクの投稿', [], ['class' => 'nav-link']) !!}</li>
              　 {{-- ログアウトへのリンク --}}
-                    <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
-                </ul
+                    <li class="nav-item">{!! link_to_route('logout.get', 'Logout', [], ['class' => 'nav-link']) !!}</li>
+                <!--</ul>-->
                  @else
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
@@ -23,5 +25,5 @@
                 @endif
             </ul>
         </div>
-    </nav>s
+    </nav>
 </header>
